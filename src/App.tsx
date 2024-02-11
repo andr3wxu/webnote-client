@@ -19,6 +19,12 @@ function App() {
   return (
     <>
       <div className="w-full">
+        <h1 className="text-4xl font-light">
+          web
+          <span style={{ fontFamily: "Martian Mono", fontSize: "0.8em" }}>
+            note
+          </span>
+        </h1>
         <Editor />
       </div>
     </>

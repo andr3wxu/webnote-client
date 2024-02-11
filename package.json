@@ -16,7 +16,8 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
     "remark-parse": "^11.0.0",
-    "remark-react": "^9.0.1"
+    "remark-react": "^9.0.1",
+    "turndown": "^7.1.2"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.260",
