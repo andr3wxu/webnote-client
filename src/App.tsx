@@ -1,5 +1,9 @@
+import { MemoryRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Editor from "./components/Editor";
+import Default from "./pages/Default";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Notes from "./pages/Notes";
 
 function App() {
   // const onClick = async () => {
@@ -18,15 +22,14 @@ function App() {
 
   return (
     <>
-      <div className="w-full">
-        <h1 className="text-4xl font-light">
-          web
-          <span style={{ fontFamily: "Martian Mono", fontSize: "0.8em" }}>
-            note
-          </span>
-        </h1>
-        <Editor />
-      </div>
+      <Router basename="/">
+        <Routes>
+          <Route path="" element={<Default />} />
+          <Route path="login" element={<Login />} />
+          <Route path="sign-up" element={<SignUp />} />
+          <Route path="notes" element={<Notes />} />
+        </Routes>
+      </Router>
     </>
   );
 }

@@ -11,10 +11,15 @@
   },
   "permissions": [
     "scripting",
+    "tabs",
     "activeTab"
   ],
   "host_permissions": [
     "http://*/*",
     "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "index.html",
+    "assets/*"
   ]
 }
