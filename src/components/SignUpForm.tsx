@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ const SignUpForm = () => {
     setError("");
     e.preventDefault(); // prevents default form behaviour
     try {
-      await axios({
+      const response = await axios({
         method: "post",
         url: "http://localhost:8000/api/signup/",
         data: {
@@ -38,8 +39,12 @@ const SignUpForm = () => {
           password: formData.password,
         },
       });
+      Cookies.set("wn_auth_token", response.data.token);
+      Cookies.set("wn_user_id", response.data.id);
       navigate("/");
-    } catch {}
+    } catch {
+      console.log("Sign up failed.");
+    }
     return;
   };
   return (

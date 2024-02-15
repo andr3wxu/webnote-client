@@ -19,7 +19,6 @@
     "https://*/*"
   ],
   "web_accessible_resources": [
-    "index.html",
-    "assets/*"
+    { "resources": ["index.html", "assets/*"], "matches": ["<all_urls>"] }
   ]
 }

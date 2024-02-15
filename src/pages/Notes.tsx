@@ -55,10 +55,6 @@ const Notes = () => {
     getNotes();
   }, []);
 
-  useEffect(() => {
-    console.log("Updated noteList:", noteList);
-  }, [noteList]);
-
   return (
     <div>
       <section className="flex flex-row">
@@ -72,7 +68,7 @@ const Notes = () => {
       </section>
 
       {noteList.map((note) => {
-        return <NoteCard note={note} />;
+        return <NoteCard note={note} key={note.id} />;
       })}
     </div>
   );

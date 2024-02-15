@@ -38,7 +38,9 @@ const LoginForm = () => {
       Cookies.set("wn_auth_token", response.data.token);
       Cookies.set("wn_user_id", response.data.id);
       navigate("/");
-    } catch {}
+    } catch {
+      console.log("Login failed.");
+    }
     return;
   };
 
